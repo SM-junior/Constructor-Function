@@ -162,39 +162,39 @@
 
 
 //prototypical inheritance and call()
-function Shape(name){
-    this.name=name
-}
-Shape.prototype.logName=function(){
-    console.log(`Shape Name: ${this.name}`);
-}
+// function Shape(name){
+//     this.name=name
+// }
+// Shape.prototype.logName=function(){
+//     console.log(`Shape Name: ${this.name}`);
+// }
 
-function Rectangle(name, height, width){
-    Shape.call(this, name)
+// function Rectangle(name, height, width){
+//     Shape.call(this, name)
 
-    this.height=height;
-    this.width=width
-}
-//inherit shape prototype
-Rectangle.prototype=Object.create(Shape.prototype)
+//     this.height=height;
+//     this.width=width
+// }
+// //inherit shape prototype
+// Rectangle.prototype=Object.create(Shape.prototype)
 
-function Circle(name, radius){
-    Shape.call(this, name)
+// function Circle(name, radius){
+//     Shape.call(this, name)
 
-    this.radius=radius;
-}
-//inherit shape prototype
-Circle.prototype=Object.create(Shape.prototype)
+//     this.radius=radius;
+// }
+// //inherit shape prototype
+// Circle.prototype=Object.create(Shape.prototype)
 
-//set prototype constructor
+// //set prototype constructor
 
-Rectangle.prototype.constructor=Rectangle;
-Circle.prototype.constructor=Circle;
+// Rectangle.prototype.constructor=Rectangle;
+// Circle.prototype.constructor=Circle;
 
-const rect=new Rectangle('Rectangle', 10, 10);
-const cir=new Circle('karim',20)
-console.log(rect, cir);
-console.log(rect.constructor);
-console.log(cir.constructor);
-rect.logName()
-cir.logName()
+// const rect=new Rectangle('Rectangle', 10, 10);
+// const cir=new Circle('karim',20)
+// console.log(rect, cir);
+// console.log(rect.constructor);
+// console.log(cir.constructor);
+// rect.logName()
+// cir.logName()
