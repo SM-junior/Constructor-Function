@@ -103,3 +103,98 @@
 
 // const rec1=new Rectangle('shahin', 5, 10)
 // console.log(Object.getPrototypeOf(rec1));
+
+
+//adding method to prototype
+// function Rectangle(name, width, height) {
+//     this.name = name;
+//     this.width = width;
+//     this.height = height;
+// }
+
+// Rectangle.prototype.area = function () {
+//     return this.width * this.height
+// }
+// Rectangle.prototype.isSquare = function () {
+//     return 2 * (this.height + this.width)
+// }
+// Rectangle.prototype.changeName=function(newName){
+//     return this.name=newName
+// }
+
+// const rect=new Rectangle('Shahin', 10,20)
+// console.log(rect);
+// console.log(rect.isSquare());
+// console.log(rect.area());
+// console.log(rect.changeName('karim'));
+
+
+
+// object based 
+
+// const rectanglePrototype={
+//     area: function () {
+//         return this.width * this.height
+//     },
+//     isSquare: function () {
+//         return 2 * (this.height + this.width)
+//     },
+//     changeName: function(newName){
+//         return this.name=newName
+//     }
+// }
+// function createRectangle(height, width){
+//     return Object.create(rectanglePrototype, {
+//         height:{
+//             value:height
+//         },
+//         width:{
+//             value:width
+//         },
+//     })
+// }
+
+// const rect= createRectangle(10,20)
+// console.log(rect);
+// console.log(rect.area());
+// console.log(rect.isSquare());
+// console.log(rect.changeName('Sbotika'));
+
+
+//prototypical inheritance and call()
+function Shape(name){
+    this.name=name
+}
+Shape.prototype.logName=function(){
+    console.log(`Shape Name: ${this.name}`);
+}
+
+function Rectangle(name, height, width){
+    Shape.call(this, name)
+
+    this.height=height;
+    this.width=width
+}
+//inherit shape prototype
+Rectangle.prototype=Object.create(Shape.prototype)
+
+function Circle(name, radius){
+    Shape.call(this, name)
+
+    this.radius=radius;
+}
+//inherit shape prototype
+Circle.prototype=Object.create(Shape.prototype)
+
+//set prototype constructor
+
+Rectangle.prototype.constructor=Rectangle;
+Circle.prototype.constructor=Circle;
+
+const rect=new Rectangle('Rectangle', 10, 10);
+const cir=new Circle('karim',20)
+console.log(rect, cir);
+console.log(rect.constructor);
+console.log(cir.constructor);
+rect.logName()
+cir.logName()
