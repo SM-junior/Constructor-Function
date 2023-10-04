@@ -1,51 +1,50 @@
 // class Wallet {
-//     constructor() {
-//         this._balance = 0;
-//         this._transaction=[];
-//     }
+//     #balance=0;
+//     #transaction=[];
+
 //     deposit(amount) {
-//         this._balance += amount;
-//         this._processDeposit(amount)
+//         this.#balance += amount;
+//         this.#processDeposit(amount)
 //     }
 //     withdraw(amount) {
-//         if(amount>this._balance){
+//         if(amount>this.#balance){
 //             console.log('You dont have enough fund');
 //             return;
 //         }
-//         this._processWithdraw(amount)
-//         this._balance -=amount;
+//         this.#processWithdraw(amount)
+//         this.#balance -=amount;
 //     }
-//     _processDeposit(amount){
+//     #processDeposit(amount){
 //         console.log(`Depositing ${amount}`);
 
-//         this._transaction.push({
+//         this.#transaction.push({
 //             type:'deposit',
 //             amount
 //         })
 //     }
-//     _processWithdraw(amount){
+//     #processWithdraw(amount){
 //         console.log(`Withdrawing ${amount}`);
 
-//         this._transaction.push({
+//         this.#transaction.push({
 //             type:'withdraw',
 //             amount
 //         })
 //     }
 //     // getBalance(){
-//     //     return `New balance is: $${this._balance}`;
+//     //     return `New balance is: $${this.#balance}`;
 //     // }
 //     //using getter method
 //     get balance(){
-//         return `New balance is: $${this._balance}`;
+//         return `New balance is: $${this.#balance}`;
 //     }
 
 //     get transaction(){
-//         return this._transaction
+//         return this.#transaction
 //     }
 // }
 // const wallet=new Wallet();
 // wallet.deposit(500);
-// wallet.withdraw(200);
+// wallet.withdraw(350);
 // // console.log(wallet.getBalance());
 
 // //using getter method
